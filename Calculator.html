@@ -15,51 +15,66 @@
         <div class="all-btn">
         <div class="batton">
             <div>
-                <input type="button" class="btn" value="C">
-                <input type="button" class="btn" value="+/-">
-                <input type="button" class="btn" value="%">
-                <input type="button" class="btn" value="/">
+                <input id="btnC"onclick="display('btnC')"   type="button" class="btn" value="C">
+                <input id="btn("onclick="display('btn(')"  type="button" class="btn" value="(">
+                <input id="btn)"onclick="display('btn)')"  type="button" class="btn" value=")">
+                <input id="btn/"onclick="display('btn/')"  type="button" class="btn" value="/">
             </div>
 
         </div>
         <div class="batton">
             <div>
-                <input type="button" class="btn" value="7">
-                <input type="button" class="btn" value="8">
-                <input type="button" class="btn" value="9">
-                <input type="button" class="btn" value="x">
+                <input id="btn7"onclick="display('btn7')" type="button" class="btn" value="7">
+                <input id="btn8"onclick="display('btn8')" type="button" class="btn" value="8">
+                <input id="btn9"onclick="display('btn9')" type="button" class="btn" value="9">
+                <input id="btnX"onclick="display('btnX')" type="button" class="btn" value="*">
             </div>
 
         </div>
         <div class="batton">
             <div>
-                <input type="button" class="btn" value="4">
-                <input type="button" class="btn" value="5">
-                <input type="button" class="btn" value="6">
-                <input type="button" class="btn" value="-">
+                <input id="btn4"onclick="display('btn4')" type="button" class="btn" value="4">
+                <input id="btn5"onclick="display('btn5')" type="button" class="btn" value="5">
+                <input id="btn6"onclick="display('btn6')" type="button" class="btn" value="6">
+                <input id="btn-"onclick="display('btn-')"  type="button" class="btn" value="-">
             </div>
 
         </div>
         <div class="batton">
             <div>
-                <input type="button" class="btn" value="1">
-                <input type="button" class="btn" value="2">
-                <input type="button" class="btn" value="3">
-                <input type="button" class="btn" value="+">
+                <input id="btn1"onclick="display('btn1')" type="button" class="btn"  value="1">
+                <input id="btn2"onclick="display('btn2')" type="button" class="btn" value="2">
+                <input id="btn3"onclick="display('btn3')" type="button" class="btn" value="3">
+                <input id="btn+"onclick="display('btn+')"  type="button" class="btn" value="+">
             </div>
 
         </div>
         <div class="batton">
             <div>
-                <input type="button" class="btn" value="0">
-                <input type="button" class="btn" value=".">
-                <input type="button" class="btn" value="DEL">
-                <input type="button" class="btn" value="=">
+                <input id="btn0"onclick="display('btn0')" type="button" class="btn" value="0">
+                <input id="btn."onclick="display('btn.')"  type="button" class="btn" value=".">
+                <input id="btn%"onclick="display('btn%')"  type="button" class="btn" value="%">
+                <input id="equal" onclick="result('equal')" type="button" class="btn" value="=">
             </div>
 
         </div>
     </div>
         
     </div>
+    <script>
+        function display(btnValue){
+            let result = document.getElementById("result").value
+            if(document.getElementById(btnValue).value == "C"){
+                document.getElementById("result").value = ''
+            }
+            else{
+                document.getElementById("result").value = result + document.getElementById(btnValue).value 
+            }   
+        }
+        function result(){
+            document.getElementById("result").value =eval((document.getElementById("result").value))
+            }
+        
+    </script>
 </body>
 </html>
