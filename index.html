@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator project</title>
-    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="gelary">
@@ -16,8 +16,8 @@
         <div class="batton">
             <div>
                 <input type="button" class="btn" value="C">
-                <input type="button" class="btn" value="+/-">
-                <input type="button" class="btn" value="%">
+                <input type="button" class="btn" value="(">
+                <input type="button" class="btn" value=")">
                 <input type="button" class="btn" value="/">
             </div>
 
@@ -53,7 +53,7 @@
             <div>
                 <input type="button" class="btn" value="0">
                 <input type="button" class="btn" value=".">
-                <input type="button" class="btn" value="DEL">
+                <input type="button" class="btn" value="%">
                 <input type="button" class="btn" value="=">
             </div>
 
@@ -61,5 +61,28 @@
     </div>
         
     </div>
+    <script>
+        let screen = document.getElementById("result")
+        let button = document.getElementsByClassName("btn")
+
+        for (let i = 0 ;i<button.length;i++){
+            button[i].addEventListener("click",function(event){
+                buttonText = event.target.value
+                if (buttonText == "C"){
+                    screen.value = ""
+                }
+                else if (buttonText == "x"){
+                    screen.value += "*"
+                }
+                else if (buttonText == "="){
+                    let equalValue =  eval(screen.value);
+                    screen.value = equalValue 
+                }
+                else{
+                    screen.value += buttonText;
+                }
+            })
+        }
+    </script>
 </body>
 </html>
